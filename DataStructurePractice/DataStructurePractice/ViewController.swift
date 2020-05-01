@@ -12,6 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var testNode = TreeNode()
+        //creating test Node
+        testNode.data = 5
+        testNode.leftNode = nil
+        testNode.rightNode = nil
+        
         // Do any additional setup after loading the view.
     }
 
