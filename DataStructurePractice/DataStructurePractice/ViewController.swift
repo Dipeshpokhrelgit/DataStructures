@@ -68,8 +68,50 @@ class ViewController: UIViewController {
       //  Node7.neighbours = [edge78]
 
      //   DFS(starting: Node0)
-        KnapsackProblem()
+     //   KnapsackProblem()
+        QueenProblem()
         // Do any additional setup after loading the view.
+    }
+    
+    func QueenProblem() {
+        
+          var matrix : [[Int]] = Array(repeating: Array(repeating: 0, count: 4 ), count: 4)
+        
+        
+        func internalCheck(row : Int , columen : Int) -> Bool {
+            
+            // check already element exist or not
+            if matrix[row][columen] != 0 {
+                return true
+            }
+            //check row
+            for i in 0..<4 {
+                if matrix[i][columen] == 1 {
+                    return true
+                }
+            }
+            //check all column
+            for i in 0..<4 {
+                if matrix[row][i] == 1 {
+                    return true
+                }
+            }
+            //diagonal check
+            
+            return false
+        }
+        for i in 0..<4 {
+            for j in 0..<4 {
+                if internalCheck(row: i, columen: j) == false {
+                    matrix[i][j] = 1
+                }
+            }
+        }
+        for obj in matrix {
+            print(obj)
+        }
+        
+        
     }
     
     func KnapsackProblem() -> Int { //
