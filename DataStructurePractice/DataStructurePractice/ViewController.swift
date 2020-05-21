@@ -96,6 +96,13 @@ class ViewController: UIViewController {
                     return true
                 }
             }
+            for i in 1..<4 {
+                if row > 1 {
+                if matrix[row - 1][i] == 1  {
+                    return true
+                }
+                }
+            }
             //diagonal check
             
             return false
